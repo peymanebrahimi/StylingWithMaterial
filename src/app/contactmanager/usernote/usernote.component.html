@@ -1,0 +1,33 @@
+<div>
+
+    <mat-form-field>
+        <mat-label>Filter </mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input />
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort [matSortActive]="'id'"
+        [matSortDirection]="'asc'">
+
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
+            <td mat-cell *matCellDef="let note">{{note.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+            <td mat-cell *matCellDef="let note">{{note.title}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+            <td mat-cell *matCellDef="let note">{{note.date | date:'medium'}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <mat-paginator [pageSize]="2" [pageSizeOptions]="[1, 2, 5, 10]" showFirstLastButtons></mat-paginator>
+
+</div>

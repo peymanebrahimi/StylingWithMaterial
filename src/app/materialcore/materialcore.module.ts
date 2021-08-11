@@ -33,7 +33,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import {  } from '@angular/material/button-toggle';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 const moduleList = [
@@ -70,7 +71,9 @@ const moduleList = [
   MatTableModule,
   MatSortModule,
   MatPaginatorModule,
-  MatBottomSheetModule
+  MatBottomSheetModule,
+  FlexLayoutModule,
+  MatNativeDateModule
 ];
 
 @NgModule({

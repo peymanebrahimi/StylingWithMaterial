@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Add New COntact</h2>
+<mat-dialog-content>
+
+    <div>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput [formControl]="name" required />
+            <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+            <mat-label>BirthDate</mat-label>
+            <input matInput [matDatepicker]="picker" [formControl]="birthDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+            <mat-label>Bio</mat-label>
+            <textarea matInput [formControl]="bio"></textarea>
+        </mat-form-field>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button color="primary" (click)="save()">
+        <mat-icon>save</mat-icon> Save
+    </button>
+
+    <button mat-button color="primary" (click)="dismiss()">
+        <mat-icon>cancel</mat-icon> Cancel
+    </button>
+
+</mat-dialog-actions>

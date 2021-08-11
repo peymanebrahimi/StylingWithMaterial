@@ -4,8 +4,8 @@
         class="mat-elevation-z10" #sidenav>
         <mat-toolbar color="primary">Contacts</mat-toolbar>
         <mat-nav-list>
-            <mat-list-item *ngFor="let user of users$|async">
-                <a matLine [routerLink]="['/contactmanager', user.id]">{{ user.name }}</a>
+            <mat-list-item *ngFor="let user of users$|async" [routerLink]="['/contactmanager', user.id]">
+                <a matLine >{{ user.name }}</a>
                 <button mat-icon-button>
                     <mat-icon>info</mat-icon>
                 </button>

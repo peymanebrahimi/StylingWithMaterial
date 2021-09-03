@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { LuxonDateAdapter, MatLuxonDateAdapterOptions, MAT_LUXON_DATE_ADAPTER_OPTIONS, MAT_LUXON_DATE_FORMATS } from '@angular/material-luxon-adapter';
+import { DateAdapter, MatDateFormats, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
@@ -7,7 +9,19 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-newcontactdialog',
   templateUrl: './newcontactdialog.component.html',
-  styleUrls: ['./newcontactdialog.component.scss']
+  styleUrls: ['./newcontactdialog.component.scss'],
+
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: "fa-IR" },
+    {
+      provide: DateAdapter,
+      useClass: LuxonDateAdapter,
+      deps: [MAT_DATE_LOCALE, MAT_LUXON_DATE_ADAPTER_OPTIONS]
+    },
+    {
+      provide: MAT_DATE_FORMATS, useValue: MAT_LUXON_DATE_FORMATS
+    }
+  ]
 })
 export class NewcontactdialogComponent implements OnInit {
 

@@ -35,6 +35,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
 
 
 const moduleList = [
@@ -73,7 +74,8 @@ const moduleList = [
   MatPaginatorModule,
   MatBottomSheetModule,
   FlexLayoutModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatLuxonDateModule
 ];
 
 @NgModule({

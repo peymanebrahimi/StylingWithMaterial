@@ -33,7 +33,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import { FlexLayoutModule } from '@angular/flex-layout';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
 
@@ -73,7 +73,7 @@ const moduleList = [
   MatSortModule,
   MatPaginatorModule,
   MatBottomSheetModule,
-  FlexLayoutModule,
+  // FlexLayoutModule,
   MatNativeDateModule,
   MatLuxonDateModule
 ];

@@ -41,9 +41,9 @@ export class NewcontactdialogComponent implements OnInit {
   }
 
   save() {
-    this.user.name = this.name.value;
-    this.user.birthDate = this.birthDate.value;
-    this.user.bio = this.bio.value;
+    this.user.name = this.name.value!;
+    this.user.birthDate = new Date(this.birthDate.value!);
+    this.user.bio = this.bio.value!;
     this.userService.addUser(this.user).then(user => {
       this.dialogRef.close(user);
     });
